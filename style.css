@@ -1,0 +1,83 @@
+.text {
+  color: rgb(134, 127, 127);
+  min-width: 15px;
+}
+
+.--mistake {
+  color: rgb(255, 8, 8);
+  /* background-color: red; */
+}
+
+.--correct {
+  color: rgb(0, 0, 0);
+}
+
+.--active {
+  /* text-decoration: underline overline; */
+  background-color: rgb(155, 154, 154);
+  color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: rgb(194, 174, 174);
+}
+
+.display {
+  background-color: wheat;
+  padding: 50px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 25px;
+  min-height: 70px;
+}
+
+/* // keybord */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(auto, 1.25em));
+  grid-auto-rows: 3em;
+  gap: 0.25em;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.key {
+  font-size: inherit;
+  grid-column: span 2;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(
+    var(--hue, 200),
+    var(--saturation, 1%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  color: white;
+  fill: white;
+  text-transform: uppercase;
+  border-radius: 0.25em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.key.large {
+  grid-column: span 3;
+}
+
+.key > svg {
+  width: 1.75em;
+  height: 1.75em;
+}
+
+.key:hover,
+.key:focus {
+  --lightness-offset: 10%;
+}
+
+.key.active {
+  --hue: 115;
+  --saturation: 29%;
+  --lightness: 43%;
+}
