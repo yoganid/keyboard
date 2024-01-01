@@ -45,7 +45,7 @@ const data = [
 
 let text = data[randomFunctin(0, data.length - 1)].text.split("");
 let hp = Math.floor(text.length / 2);
-let damage = 6;
+let damage = 1;
 let score = 0;
 document.getElementById("level").innerHTML = `Level ${damage}`;
 let timer;
@@ -116,6 +116,7 @@ function restart() {
 
   hp = Math.floor(text.length / 2);
   if (damage >= 6) {
+    damage = 6;
     console.log("max damage");
   } else {
     damage++;
@@ -157,7 +158,7 @@ function gameOver() {
   document.getElementById("display").innerHTML = "";
   document.getElementById("countdown").innerHTML = "GameOver";
   console.log(gamemode);
-  location.reload();
+  // location.reload();
 }
 
 function save() {
